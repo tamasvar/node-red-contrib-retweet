@@ -1,0 +1,56 @@
+<script type="text/x-red" data-template-name="twitter-retweet">
+
+   <div class="form-row">
+        <label for="node-input-creds"> Credentials</label>
+        <input type="text" id="node-input-creds">
+    </div>
+    
+    <!-- By convention, most nodes have a 'name' property. The following div -->
+    <!-- provides the necessary field. Should always be the last option      -->
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name of this Event">
+    </div>
+    
+    <div class="form-row">
+        <label for="node-input-tweet">Tweet ID</label>
+        <input type="text" id="node-input-tweet" placeholder="1234567890">
+    </div>
+    
+</script>
+
+
+<!-- Next, some simple help text is provided for the node.                   -->
+<script type="text/x-red" data-help-name="twitter-retweet">
+
+    <h3>About</h3>
+    <p>Likes the status specified in the ID parameter as the authenticating user. Returns the liked status when successful</p>
+
+    <h3>Use</h3>
+    <p>To use either configure the form or pass the tweet id as a parameter inside the payload object ({"tweet"":"1234567890"}).
+    </p>
+    <p>For more information on these parameters see the twitter API:</p>
+    <p><a href="https://dev.twitter.com/rest/reference/post/favorites/create" target="_blank">favorites/create</a></p>
+</script>
+
+<!-- Finally, the node type is registered along with all of its properties   -->
+<!-- The example below shows a small subset of the properties that can be set-->
+<script type="text/javascript">
+    RED.nodes.registerType('twitter-retweet', {
+        category: 'social',
+        defaults: {    
+            creds: {value:"", type:"twitter-client"},
+            name: {value:""},
+            tweet: {value:""}
+        },
+        inputs:1,               // set the number of inputs - only 0 or 1
+        outputs:1,              // set the number of outputs - 0 to n
+        icon: "twitter.png",     // saved in  icons/myicon.png
+        color: "#C0DEED", 
+        label: function() {
+            return this.name || "retweet Tweet";
+        },
+        paletteLabel: "retweet"
+        
+    });
+</script>
