@@ -2,7 +2,7 @@
 
 ## Installation
 
-`npm install node-red-contrib-twitter-likes`
+`npm install node-red-contrib-twitter-retweet`
 
 ## Quick Start
 

@@ -8,11 +8,11 @@
     "predev": "npm i -g",
     "dev": "node-red -v"
   },
-  "author": "a",
+  "author": "Stephen Keep",
   "contributors": [
     {
-      "name": "a",
-      "email": "a"
+      "name": "Stephen Keep",
+      "email": "Stephen.Keep@redant.com"
     }
   ],
   "keywords": [
@@ -23,7 +23,7 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Chouchen/node-red-contrib-twitter-likes"
+    "url": "https://github.com/tamasvar/node-red-contrib-retweet"
   },
   "dependencies": {
     "twit": "^2.2.11"
